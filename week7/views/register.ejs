@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <% if (errors.length > 0) { %>
+        <ul>
+            <% errors.forEach(error => { %>
+                <li><%= error %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+    <form action="/register" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%= values.name %>">
+        <br><br>
+
+        <label>Email:</label>
+        <input type="text" name="email" value="<%= values.email %>">
+        <br><br>
+
+        <label>Course:</label>
+        <input type="text" name="course" value="<%= values.course %>">
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
